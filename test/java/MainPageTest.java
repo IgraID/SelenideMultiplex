@@ -44,6 +44,6 @@ MainPage mainPage = new MainPage();
                 .C_leftBtnClick()
                 .MenuBtnClick()
                 .PopCornClick()
-                .checkPopCorn("q");
+                .checkPopCorn("Окуляри 3D з лого Multiplex (L) дорослі");
     }
 }
