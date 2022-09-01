@@ -35,4 +35,15 @@ MainPage mainPage = new MainPage();
                 .clickAboutUsLink()
                 .checkTitle();
     }
+
+    @Test
+    public void checkPopCorn () {
+
+        mainPage.openMainPage()
+                .PopupOtherBtnClick()
+                .C_leftBtnClick()
+                .MenuBtnClick()
+                .PopCornClick()
+                .checkPopCorn("q");
+    }
 }

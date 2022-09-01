@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
@@ -16,6 +17,8 @@ public class MainPage {
     SelenideElement menuText = $(cssSelector("body > div.left_menu.js-left-menu.on > div > div.mob_container > div.menu-block > div"));
     SelenideElement SingIn = $(".menu-block > a");
     SelenideElement AboutUsLink = $(cssSelector("body > div.left_menu.js-left-menu.on > div > div.mob_container > div.menu_list > a:nth-child(8)"));
+    SelenideElement PopCorn = $(cssSelector("body > div > div:nth-child(1) > div.container-concession > div.concession-items > div:nth-child(2) > div.bar-item-title"));
+    SelenideElement PopCornClick = $(cssSelector(".menu_item yellow"));
 
     public MainPage openMainPage (){
 
@@ -54,6 +57,16 @@ public class MainPage {
     public AboutUsPage clickAboutUsLink() {
         AboutUsLink.shouldBe(visible).click();
         return new AboutUsPage();
+    }
+
+    public MainPage checkPopCorn(String text) {
+        PopCorn.shouldBe(visible).shouldHave(exactText(text));
+        return this;
+    }
+
+    public MainPage PopCornClick() {
+        PopCornClick.shouldBe().click();
+        return this;
     }
 }
 
